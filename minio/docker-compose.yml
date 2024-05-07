@@ -1,15 +1,13 @@
-version: '3.7'
-
 services:
-  minio1:
+  minio:
     image: quay.io/minio/minio
     command: server /data --console-address ":9001"
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "9010:9000"
+      - "9011:9001"
     volumes:
-      - "${HOME}/minio/data:/data"
+      - "./data:/data"
     environment:
-      - MINIO_ROOT_USER=ROOTUSER
-      - MINIO_ROOT_PASSWORD=CHANGEME123
-    user: "${UID}:${GID}"
+      - MINIO_ROOT_USER=root
+      - MINIO_ROOT_PASSWORD=root
+    user: "${MY_UID}:${MY_GID}"
