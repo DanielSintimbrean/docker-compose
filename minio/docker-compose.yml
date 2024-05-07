@@ -9,5 +9,4 @@ services:
       - "./data:/data"
     environment:
       - MINIO_ROOT_USER=root
-      - MINIO_ROOT_PASSWORD=root
-    user: "${MY_UID}:${MY_GID}"
+      - MINIO_ROOT_PASSWORD=rootroot
